@@ -95,45 +95,46 @@ if ~isequal(file_name,0)
     guidata(hObject,handles);
     axes(handles.img);
     imshow(mobil_rgb);
-    
+    num_row = 300;
+    num_col = 225;
 
     thold = 120;
-    test = threshold(grayscale(mobil_rgb),thold);
-    ayla = zeros(75,100,5);
-    ayla(:,:,1) = threshold(grayscale(imread ('datamobil/ayla/ayla-1.jpg')),thold);
-    ayla(:,:,2) = threshold(grayscale(imread ('datamobil/ayla/ayla-2.jpg')),thold);
-    ayla(:,:,3) = threshold(grayscale(imread ('datamobil/ayla/ayla-3.jpg')),thold);
-    ayla(:,:,4) = threshold(grayscale(imread ('datamobil/ayla/ayla-4.jpg')),thold);
-    ayla(:,:,5) = threshold(grayscale(imread ('datamobil/ayla/ayla-5.jpg')),thold);
+    test = threshold(grayscale(imresize((mobil_rgb),[num_row num_col])),thold);
+    ayla = zeros(num_row,num_col,5);
+    ayla(:,:,1) = threshold(grayscale(imresize(imread('datamobil/ayla/ayla-1.jpg'), [num_row num_col])),thold);
+    ayla(:,:,2) = threshold(grayscale(imresize(imread('datamobil/ayla/ayla-2.jpg'), [num_row num_col])),thold);
+    ayla(:,:,3) = threshold(grayscale(imresize(imread('datamobil/ayla/ayla-3.jpg'), [num_row num_col])),thold);
+    ayla(:,:,4) = threshold(grayscale(imresize(imread('datamobil/ayla/ayla-4.jpg'), [num_row num_col])),thold);
+    ayla(:,:,5) = threshold(grayscale(imresize(imread('datamobil/ayla/ayla-5.jpg'), [num_row num_col])),thold);
 
-    xenia = zeros(75,100,5);
-    xenia(:,:,1) = threshold(grayscale(imread ('datamobil/xenia/xenia-1.jpg')),thold);
-    xenia(:,:,2) = threshold(grayscale(imread ('datamobil/xenia/xenia-2.jpg')),thold);
-    xenia(:,:,3) = threshold(grayscale(imread ('datamobil/xenia/xenia-3.jpg')),thold);
-    xenia(:,:,4) = threshold(grayscale(imread ('datamobil/xenia/xenia-4.jpg')),thold);
-    xenia(:,:,5) = threshold(grayscale(imread ('datamobil/xenia/xenia-5.jpg')),thold);
+    xenia = zeros(num_row,num_col,5);
+    xenia(:,:,1) = threshold(grayscale(imresize(imread('datamobil/xenia/xenia-1.jpg'), [num_row num_col])),thold);
+    xenia(:,:,2) = threshold(grayscale(imresize(imread('datamobil/xenia/xenia-2.jpg'), [num_row num_col])),thold);
+    xenia(:,:,3) = threshold(grayscale(imresize(imread('datamobil/xenia/xenia-3.jpg'), [num_row num_col])),thold);
+    xenia(:,:,4) = threshold(grayscale(imresize(imread('datamobil/xenia/xenia-4.jpg'), [num_row num_col])),thold);
+    xenia(:,:,5) = threshold(grayscale(imresize(imread('datamobil/xenia/xenia-5.jpg'), [num_row num_col])),thold);
     
-    angkot = zeros(75,100,5);
-    angkot(:,:,1) = threshold(grayscale(imread ('datamobil/angkot/angkot-1.jpg')),thold);
-    angkot(:,:,2) = threshold(grayscale(imread ('datamobil/angkot/angkot-2.jpg')),thold);
-    angkot(:,:,3) = threshold(grayscale(imread ('datamobil/angkot/angkot-3.jpg')),thold);
-    angkot(:,:,4) = threshold(grayscale(imread ('datamobil/angkot/angkot-4.jpg')),thold);
-    angkot(:,:,5) = threshold(grayscale(imread ('datamobil/angkot/angkot-5.jpg')),thold);
+    angkot = zeros(num_row,num_col,5);
+    angkot(:,:,1) = threshold(grayscale(imresize(imread('datamobil/angkot/angkot-1.jpg'), [num_row num_col])),thold);
+    angkot(:,:,2) = threshold(grayscale(imresize(imread('datamobil/angkot/angkot-2.jpg'), [num_row num_col])),thold);
+    angkot(:,:,3) = threshold(grayscale(imresize(imread('datamobil/angkot/angkot-3.jpg'), [num_row num_col])),thold);
+    angkot(:,:,4) = threshold(grayscale(imresize(imread('datamobil/angkot/angkot-4.jpg'), [num_row num_col])),thold);
+    angkot(:,:,5) = threshold(grayscale(imresize(imread('datamobil/angkot/angkot-5.jpg'), [num_row num_col])),thold);
     
-    panther = zeros(75,100,5);
-    panther(:,:,1) = threshold(grayscale(imread ('datamobil/panther/panther-1.jpg')),thold);
-    panther(:,:,2) = threshold(grayscale(imread ('datamobil/panther/panther-2.jpg')),thold);
-    panther(:,:,3) = threshold(grayscale(imread ('datamobil/panther/panther-3.jpg')),thold);
-    panther(:,:,4) = threshold(grayscale(imread ('datamobil/panther/panther-4.jpg')),thold);
-    panther(:,:,5) = threshold(grayscale(imread ('datamobil/panther/panther-5.jpg')),thold);
+    panther = zeros(num_row,num_col,5);
+    panther(:,:,1) = threshold(grayscale(imresize(imread('datamobil/panther/panther-1.jpg'), [num_row num_col])),thold);
+    panther(:,:,2) = threshold(grayscale(imresize(imread('datamobil/panther/panther-2.jpg'), [num_row num_col])),thold);
+    panther(:,:,3) = threshold(grayscale(imresize(imread('datamobil/panther/panther-3.jpg'), [num_row num_col])),thold);
+    panther(:,:,4) = threshold(grayscale(imresize(imread('datamobil/panther/panther-4.jpg'), [num_row num_col])),thold);
+    panther(:,:,5) = threshold(grayscale(imresize(imread('datamobil/panther/panther-5.jpg'), [num_row num_col])),thold);
 
 
-    crv = zeros(75,100,5);
-    crv(:,:,1) = threshold(grayscale(imread ('datamobil/crv/crv-1.jpg')),thold);
-    crv(:,:,2) = threshold(grayscale(imread ('datamobil/crv/crv-2.jpg')),thold);
-    crv(:,:,3) = threshold(grayscale(imread ('datamobil/crv/crv-3.jpg')),thold);
-    crv(:,:,4) = threshold(grayscale(imread ('datamobil/crv/crv-4.jpg')),thold);
-    crv(:,:,5) = threshold(grayscale(imread ('datamobil/crv/crv-5.jpg')),thold);
+    crv = zeros(num_row,num_col,5);
+    crv(:,:,1) = threshold(grayscale(imresize(imread('datamobil/crv/crv-1.jpg'), [num_row num_col])),thold);
+    crv(:,:,2) = threshold(grayscale(imresize(imread('datamobil/crv/crv-2.jpg'), [num_row num_col])),thold);
+    crv(:,:,3) = threshold(grayscale(imresize(imread('datamobil/crv/crv-3.jpg'), [num_row num_col])),thold);
+    crv(:,:,4) = threshold(grayscale(imresize(imread('datamobil/crv/crv-4.jpg'), [num_row num_col])),thold);
+    crv(:,:,5) = threshold(grayscale(imresize(imread('datamobil/crv/crv-5.jpg'), [num_row num_col])),thold);
 
     result_ayla = compare(test, ayla);
     result_xenia =  compare(test, xenia);
